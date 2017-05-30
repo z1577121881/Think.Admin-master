@@ -1,0 +1,164 @@
+        <div class="ibox">
+
+            <div class="ibox-title">
+                <h5>微信粉丝黑名单管理</h5>
+
+
+                <div class="nowrap pull-right" style="margin-top:10px">
+                    <button data-load="/index.php/wechat/fans/sync.html" class="layui-btn layui-btn-small">同步粉丝</button>
+                </div>
+
+                <div class="nowrap pull-right" style="margin-top:10px;margin-right:10px">
+                    <button data-update="" data-action="/index.php/wechat/fans/backdel.html" class="layui-btn layui-btn-small">移出黑名单</button>
+                </div>
+
+
+            </div>
+            <div class="ibox-content fadeInUp animated">
+
+
+                <!-- 表单搜索 开始 -->
+                <form class="animated form-search" action="http://127.0.0.1/index.php/wechat/fans/back.html?spm=m-61-86" onsubmit="return false" method="get">
+
+                    <div class="row">
+
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <input type="text" name="nickname" value="" placeholder="昵称" class="input-sm form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <select name="sex" class="input-sm form-control">
+                                    <option value="">- 性别 -</option>
+                                    <!---->
+                                    <option value="1">- 男 -</option>
+                                    <!---->
+                                    <!---->
+                                    <option value="2">- 女 -</option>
+                                    <!---->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <select name="tag" class="input-sm form-control">
+                                    <option value="">- 粉丝标签 -</option>
+                                    <!---->
+                                    <!---->
+                                    <option value="2">星标组</option>
+                                    <!---->
+                                    <!---->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <input type="text" name="country" value="" placeholder="国家" class="input-sm form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <input type="text" name="province" value="" placeholder="省份" class="input-sm form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <input type="text" name="city" value="" placeholder="城市" class="input-sm form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-1">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-sm btn-white"><i class="fa fa-search"></i> 搜索</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <!-- 表单搜索 结束 -->
+
+                <form onsubmit="return false;" data-auto="" method="POST" data-listen="true" novalidate="novalidate">
+                    <input type="hidden" value="resort" name="action">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="list-table-check-td">
+                                <input data-none-auto="" data-check-target=".list-check-box" type="checkbox">
+                            </th>
+                            <th class="text-left">用户昵称</th>
+                            <th class="text-left">性别</th>
+                            <th class="text-center">标签</th>
+                            <th class="text-left">区域</th>
+                            <th class="text-center">关注时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td colspan="5" style="text-align:center">没 有 记 录 了 哦 !</td></tr>
+                        </tbody>
+                    </table>
+                    <p></p></form>
+
+                <div id="tags-box" class="hide">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label><input value="2" type="checkbox"> 星标组</label>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="hr-line-dashed"></div>
+                            <button type="button" data-event="confirm" class="layui-btn layui-btn-small">保存数据</button>
+                            <button type="button" data-event="cancel" class="layui-btn layui-btn-danger layui-btn-small">取消编辑</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <script>
+                // 添加标签
+                $('body').find('[data-add-tag]').map(function () {
+                    var self = this;
+                    var fans_id = this.getAttribute('data-add-tag');
+                    var used_ids = (this.getAttribute('data-used-id') || '').split(',');
+                    var $content = $(document.getElementById('tags-box').innerHTML);
+                    for (var i in used_ids) {
+                        $content.find('[value="' + used_ids[i] + '"]').attr('checked', 'checked');
+                    }
+                    $content.attr('fans_id', fans_id);
+                    // 标签面板关闭
+                    $content.on('click', '[data-event="cancel"]', function () {
+                        $(self).popover('hide');
+                    });
+                    // 标签面板确定
+                    $content.on('click', '[data-event="confirm"]', function () {
+                        var tags = [];
+                        $content.find('input:checked').map(function () {
+                            tags.push(this.value);
+                        });
+                        $.form.load('/index.php/wechat/fans/tagset.html', {fans_id: $content.attr('fans_id'), 'tags': tags.join(',')}, 'post');
+                    });
+                    // 限制每个表单最多只能选择三个
+                    $content.on('click', 'input', function () {
+                        ($content.find('input:checked').size() > 3) && (this.checked = false);
+                    });
+                    // 标签选择面板
+                    $(this).data('content', $content).on('shown.bs.popover', function () {
+                        $('[data-add-tag]').not(this).popover('hide');
+                    }).popover({
+                        html: true,
+                        trigger: 'click',
+                        content: $content,
+                        title: '标签编辑（最多选择三个标签）',
+                        template: '<div class="popover" style="max-width:500px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style="width:500px"></div></div>'
+                    });
+                });
+            </script>
+
+        </div>

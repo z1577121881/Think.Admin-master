@@ -1,0 +1,75 @@
+        <div class="ibox">
+
+            <div class="ibox-title">
+                <h5>微信粉丝标签管理</h5>
+
+                <div class="nowrap pull-right" style="margin-top:10px">
+                    <button data-modal="/wechat/tags/add.html" data-title="添加标签" class="layui-btn layui-btn-small"> 添加标签 </button>
+                    <button data-load="/wechat/tags/sync.html" class="layui-btn layui-btn-small"> 同步标签 </button>
+                </div>
+
+            </div>
+            <div class="ibox-content fadeInUp animated">
+
+
+                <!-- 表单搜索 开始 -->
+                <form class="animated form-search" action=/wechat/tags/index.html?spm=m-61-66" onsubmit="return false" method="get">
+
+                    <div class="row">
+
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <input type="text" name="name" value="" placeholder="标签" class="input-sm form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-1">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-sm btn-white"><i class="fa fa-search"></i> 搜索</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+                <!-- 表单搜索 结束 -->
+
+                <form onsubmit="return false;" data-auto="" method="POST" data-listen="true" novalidate="novalidate">
+                    <input type="hidden" value="resort" name="action">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="list-table-check-td">
+                                <input data-none-auto="" data-check-target=".list-check-box" type="checkbox">
+                            </th>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">标签</th>
+                            <th class="text-center">类型</th>
+                            <th class="text-center">粉丝数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="list-table-check-td">
+                                <input class="list-check-box" value="2" type="checkbox">
+                            </td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">星标组</td>
+                            <td class="text-center">系统标签</td>
+                            <td class="text-center">0</td>
+                            <td class="text-center nowrap">
+
+                                <a href="javascript:void(0)" style="color:#999">编辑</a>
+                                <span class="text-explode">|</span>
+                                <a href="javascript:void(0)" style="color:#999">删除</a>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p></p></form>
+
+            </div>
+
+        </div>
