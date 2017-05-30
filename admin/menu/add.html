@@ -1,0 +1,88 @@
+<div id="" class="layui-layer-content"><form class="layui-form layui-box" style="padding:25px 30px 20px 0" action="http://127.0.0.1/index.php/admin/menu/add.html?spm=m-2-21&amp;open_type=modal" data-auto="true" method="post" data-listen="true" novalidate="novalidate">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">上级菜单</label>
+        <div class="layui-input-block">
+            <select name="pid" class="layui-select full-width" style="display:block">
+                <!---->
+                <!---->
+                <option selected="" value="0">顶级菜单</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="61">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信管理</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="82">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;素材资源管理</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="68">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信订制</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="65">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信粉丝管理</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="62">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信对接配置</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="2">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统管理</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="20">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统权限</option>
+                <!---->
+                <!---->
+                <!---->
+                <option value="4">&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统配置</option>
+                <!---->
+                <!---->
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label label-required">菜单名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" value="" required="required" title="请输入菜单名称" placeholder="请输入菜单名称" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label label-required">菜单链接</label>
+        <div class="layui-input-block">
+            <input type="text" onblur="(this.value === '') &amp;&amp; (this.value = '#')" name="url" autocomplete="off" required="required" title="请输入菜单链接" placeholder="请输入菜单链接" value="#" class="layui-input typeahead">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">菜单图标</label>
+        <div class="layui-input-inline" style="width:300px">
+            <input placeholder="请输入或选择图标" onchange="$('#icon-preview').get(0).className = this.value" type="text" name="icon" value="" class="layui-input">
+        </div>
+        <span class="layui-btn layui-btn-primary" style="padding:0 12px;min-width:45.2px">
+            <i id="icon-preview" style="font-size:1.2em" class=""></i>
+        </span>
+        <button data-icon="icon" type="button" class="layui-btn layui-btn-primary">选择图标</button>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type="submit">保存数据</button>
+        <button class="layui-btn layui-btn-danger" type="button" data-confirm="确定要取消编辑吗？" data-close="">取消编辑</button>
+    </div>
+
+    <script>
+        require(['bootstrap.typeahead'], function () {
+            var subjects = JSON.parse('["admin\/auth\/index","admin\/auth\/apply","admin\/config\/index","admin\/config\/file","admin\/log\/index","admin\/log\/del","admin\/menu\/index","admin\/menu\/forbid","admin\/node\/index","admin\/user\/index","admin\/user\/auth","admin\/user\/add","admin\/user\/edit","admin\/user\/forbid","admin\/user\/resume","wechat\/config\/index","wechat\/config\/pay","wechat\/fans\/index","wechat\/fans\/back","wechat\/keys\/index","wechat\/keys\/subscribe","wechat\/keys\/defaults","wechat\/menu\/index","wechat\/news\/index","wechat\/news\/select","wechat\/tags\/index"]');
+            $('.typeahead').typeahead({source: subjects, items: 5});
+        });
+    </script>
+
+</form>
+</div>

@@ -1,0 +1,88 @@
+<div class="ibox">
+    <div class="ibox-title">
+        <h5>系统节点管理</h5>
+    </div>
+    <div class="ibox-content fadeInUp animated">
+        <div class="alert alert-danger alert-dismissible" role="alert" style="border-radius:0">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <p style="font-size:18px;padding-bottom:10px">安全警告</p><p style="font-size:14px">结构为系统自动生成，状态数据请勿随意修改！</p>        </div>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th style="width:20px"></th>
+                <th class="text-left">系统节点结构</th>
+                <th class="text-left"></th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width:20px"></td>
+                <td class="text-left nowrap">
+                    admin&nbsp;<input class="layui-input layui-input-inline title-input" style="height:28px;line-height:28px;width:auto" name="title.admin" value="系统管理">
+                </td>
+                <td class="text-left nowrap">
+                    <label>
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                    </label>
+                </td>
+                <td style="width:100%"></td>
+            </tr>
+            <tr>
+                <td style="width:20px"></td>
+                <td class="text-left nowrap">
+                    &nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;admin/auth                &nbsp;<input class="layui-input layui-input-inline title-input" style="height:28px;line-height:28px;width:auto" name="title.admin/auth" value="权限管理">
+                </td>
+                <td class="text-left nowrap">
+                    <label>
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                    </label>
+                </td>
+                <td style="width:100%"></td>
+            </tr>
+            <tr>
+                <td style="width:20px"></td>
+                <td class="text-left nowrap">
+                    &nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;admin/auth/index                &nbsp;<input class="layui-input layui-input-inline title-input" style="height:28px;line-height:28px;width:auto" name="title.admin/auth/index" value="权限列表">
+                </td>
+                <td class="text-left nowrap">
+                    <label>
+                        <input name="is_auth.admin/auth/index" checked="checked" class="check-box" type="checkbox" value="1">
+                        加入权限控制
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input name="is_menu.admin/auth/index" checked="checked" class="check-box" type="checkbox" value="1">
+                        可设为菜单
+                    </label>
+                </td>
+                <td style="width:100%"></td>
+            </tr>
+
+            </tbody>
+        </table>
+        <script>
+            $(function () {
+                $('input.title-input').on('blur', function () {
+                    $.form.load('/admin/node/save.html', {name: this.name, value: this.value}, 'POST', function (ret) {
+                        return false;
+                    });
+                });
+                $('input.check-box').on('click', function () {
+                    $.form.load('/admin/node/save.html', {name: this.name, value: this.checked ? 1 : 0}, 'POST', function (ret) {
+                        return false;
+                    });
+                });
+            });
+        </script>
+
+    </div>
+
+</div>

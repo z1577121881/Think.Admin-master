@@ -1,0 +1,689 @@
+<div class="ibox">
+
+    <div class="ibox-title">
+        <h5>系统菜单管理</h5>
+
+        <div class="nowrap pull-right" style="margin-top:10px">
+            <button data-modal="/admin/menu/add.html" data-title="添加菜单" class="layui-btn layui-btn-small"><i class="fa fa-plus"></i> 添加菜单</button>
+            <button data-update="" data-field="delete" data-action="/admin/menu/del.html" class="layui-btn layui-btn-small layui-btn-danger"><i class="fa fa-remove"></i> 删除菜单</button>
+        </div>
+
+    </div>
+    <div class="ibox-content fadeInUp animated">
+
+
+        <form onsubmit="return false;" data-auto="true" method="post" data-listen="true" novalidate="novalidate">
+            <input type="hidden" value="resort" name="action">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="list-table-check-td">
+                        <input data-none-auto="" data-check-target=".list-check-box" type="checkbox">
+                    </th>
+                    <th class="list-table-sort-td">
+                        <button type="submit" class="layui-btn layui-btn-normal layui-btn-mini">排 序</button>
+                    </th>
+                    <th class="text-center"></th>
+                    <th>菜单名称</th>
+                    <th class="visible-lg">菜单链接</th>
+                    <th class="text-center">状态</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="2,4,3,5,6,20,22,19,21,29,9" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_2" value="1000" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>系统管理</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=2" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="2,4,3,5,6,20,22,19,21,29,9" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="2,4,3,5,6,20,22,19,21,29,9" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="4,3,5,6" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_4" value="100" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统配置</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=4" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="4,3,5,6" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="4,3,5,6" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="3" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_3" value="10" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-fw fa-tachometer"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;后台首页</td>
+                    <td class="visible-lg">/admin/index/main.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=3" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="3" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="3" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="5" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_5" value="20" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-apple"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;网站参数</td>
+                    <td class="visible-lg">/admin/config/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=5" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="5" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="5" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="6" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_6" value="30" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-hdd-o"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;文件存储</td>
+                    <td class="visible-lg">/admin/config/file.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=6" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="6" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="6" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="20,22,19,21,29,9" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_20" value="200" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统权限</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=20" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="20,22,19,21,29,9" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="20,22,19,21,29,9" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="22" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_22" value="10" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-ellipsis-v"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;节点管理</td>
+                    <td class="visible-lg">/admin/node/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=22" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="22" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="22" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="19" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_19" value="20" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-user-secret"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;权限管理</td>
+                    <td class="visible-lg">/admin/auth/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=19" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="19" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="19" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="21" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_21" value="30" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="glyphicon glyphicon-menu-hamburger"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统菜单</td>
+                    <td class="visible-lg">/admin/menu/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=21" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="21" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="21" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="29" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_29" value="40" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-users"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;系统用户</td>
+                    <td class="visible-lg">/admin/user/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=29" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="29" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="29" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="9" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_9" value="50" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="glyphicon glyphicon-console"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;操作日志</td>
+                    <td class="visible-lg">/admin/log/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=9" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="9" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="9" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="61,62,63,64,65,66,67,86,68,69,70,71,81,82,83,85" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_61" value="2000" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>微信管理</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=61" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="61,62,63,64,65,66,67,86,68,69,70,71,81,82,83,85" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="61,62,63,64,65,66,67,86,68,69,70,71,81,82,83,85" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="62,63,64" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_62" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信对接配置</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=62" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="62,63,64" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="62,63,64" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="63" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_63" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-usb"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信接口配置
+                    </td>
+                    <td class="visible-lg">/wechat/config/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=63" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="63" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="63" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="64" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_64" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-paypal"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信支付配置</td>
+                    <td class="visible-lg">/wechat/config/pay.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=64" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="64" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="64" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="65,66,67,86" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_65" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信粉丝管理</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=65" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="65,66,67,86" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="65,66,67,86" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="66" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_66" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-tags"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;粉丝标签</td>
+                    <td class="visible-lg">/wechat/tags/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=66" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="66" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="66" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="67" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_67" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-wechat"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;已关注粉丝</td>
+                    <td class="visible-lg">/wechat/fans/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=67" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="67" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="67" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="86" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_86" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-reddit-alien"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;粉丝黑名单</td>
+                    <td class="visible-lg">/wechat/fans/back.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=86" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="86" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="86" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="68,69,70,71,81" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_68" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信订制</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=68" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="68,69,70,71,81" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="68,69,70,71,81" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="69" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_69" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="glyphicon glyphicon-phone"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;微信菜单定制</td>
+                    <td class="visible-lg">/wechat/menu/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=69" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="69" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="69" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="70" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_70" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-paw"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;关键字管理</td>
+                    <td class="visible-lg">/wechat/keys/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=70" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="70" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="70" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="71" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_71" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-commenting-o"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;关注自动回复</td>
+                    <td class="visible-lg">/wechat/keys/subscribe.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=71" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="71" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="71" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="81" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_81" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-commenting-o"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;无配置默认回复</td>
+                    <td class="visible-lg">/wechat/keys/defaults.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=81" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="81" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="81" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="82,83,85" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_82" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class=""></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;素材资源管理</td>
+                    <td class="visible-lg">#</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=82" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="82,83,85" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="82,83,85" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="83" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_83" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-folder-open-o"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;添加图文</td>
+                    <td class="visible-lg">/wechat/news/add/id/1.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=83" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="83" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="83" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="85" type="checkbox">
+                    </td>
+                    <td class="list-table-sort-td">
+                        <input name="_85" value="0" class="list-sort-input">
+                    </td>
+                    <td class="text-center">
+                        <i style="font-size:18px;" class="fa fa-file-pdf-o"></i>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;&nbsp;图文列表</td>
+                    <td class="visible-lg">/wechat/news/index.html</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/menu/edit.html?id=85" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="85" data-field="status" data-value="0" data-action="/admin/menu/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="85" data-field="delete" data-action="/admin/menu/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,103 @@
+<div class="ibox">
+
+    <div class="ibox-title">
+        <h5>系统操作日志</h5>
+
+        <div class="nowrap pull-right" style="margin-top:10px">
+            <button data-update="" data-field="delete" data-action="/index.php/admin/log/del.html" class="layui-btn layui-btn-small layui-btn-danger">
+                <i class="fa fa-remove"></i> 删除日志
+            </button>
+        </div>
+
+    </div>
+    <div class="ibox-content fadeInUp animated">
+
+
+        <!-- 表单搜索 开始 -->
+        <form class="animated form-search" action="http://127.0.0.1/index.php/admin/log/index.html?spm=m-2-9" onsubmit="return false" method="get">
+
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <input type="text" name="username" value="" placeholder="操作者" class="input-sm form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <select name="action" class="input-sm form-control">
+                            <option value=""> - 行为 - </option>
+                            <!---->
+                            <!---->
+                            <option value="微信管理">微信管理</option>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <option value="系统管理">系统管理</option>
+                            <!---->
+                            <!---->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <input type="text" name="content" value="" placeholder="操作内容" class="input-sm form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-sm btn-white"><i class="fa fa-search"></i> 搜索</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- 表单搜索 结束 -->
+
+        <form onsubmit="return false;" data-auto="" method="POST" data-listen="true" novalidate="novalidate">
+            <input type="hidden" value="resort" name="action">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="list-table-check-td">
+                        <input data-none-auto="" data-check-target=".list-check-box" type="checkbox">
+                    </th>
+                    <th class="text-center">操作者</th>
+                    <th class="text-left">节点</th>
+                    <th class="text-left">行为</th>
+                    <th class="text-left">操作内容</th>
+                    <th class="text-left">操作位置</th>
+                    <th class="text-left">操作时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="5142" type="checkbox">
+                    </td>
+                    <td class="text-center">admin</td>
+                    <td class="text-left">wechat/fans/sync</td>
+                    <td class="text-left">微信管理</td>
+                    <td class="text-left">同步全部微信粉丝成功</td>
+                    <td class="text-left">未分配或者内网IP</td>
+                    <td class="text-left">2017-05-30 18:44:53</td>
+                </tr>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="5141" type="checkbox">
+                    </td>
+                    <td class="text-center">admin</td>
+                    <td class="text-left">wechat/tags/sync</td>
+                    <td class="text-left">微信管理</td>
+                    <td class="text-left">同步全部微信粉丝标签成功</td>
+                    <td class="text-left">未分配或者内网IP</td>
+                    <td class="text-left">2017-05-30 18:44:45</td>
+                </tr>
+                </tbody>
+            </table>
+            <p></p></form>
+
+    </div>
+
+</div>

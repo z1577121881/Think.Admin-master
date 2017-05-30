@@ -1,0 +1,91 @@
+<div class="ibox">
+
+    <div class="ibox-title">
+        <h5>系统用户管理</h5>
+
+        <div class="nowrap pull-right" style="margin-top:10px">
+            <button data-modal="/admin/user/add.html" data-title="添加用户" class="layui-btn layui-btn-small"><i class="fa fa-plus"></i> 添加用户
+            </button>
+            <button data-update="" data-field="delete" data-action="/admin/user/del.html" class="layui-btn layui-btn-small layui-btn-danger"><i class="fa fa-remove"></i> 删除用户
+            </button>
+        </div>
+
+    </div>
+    <div class="ibox-content fadeInUp animated">
+
+
+        <!-- 表单搜索 开始 -->
+        <form class="animated form-search" action="/admin/user/index.html?spm=m-2-29" onsubmit="return false" method="get">
+
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <input type="text" name="username" value="" placeholder="用户名" class="input-sm form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <input type="text" name="phone" value="" placeholder="手机号" class="input-sm form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-sm btn-white"><i class="fa fa-search"></i> 搜索</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- 表单搜索 结束 -->
+
+        <form onsubmit="return false;" data-auto="" method="POST" data-listen="true" novalidate="novalidate">
+            <input type="hidden" value="resort" name="action">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="list-table-check-td">
+                        <input data-none-auto="" data-check-target=".list-check-box" type="checkbox">
+                    </th>
+                    <th class="text-center">用户账号</th>
+                    <th class="text-center">手机号</th>
+                    <th class="text-center">电子邮箱</th>
+                    <th class="text-center">登录次数</th>
+                    <th class="text-center">最后登录</th>
+                    <th class="text-center">状态</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="list-table-check-td">
+                        <input class="list-check-box" value="10000" type="checkbox">
+                    </td>
+                    <td class="text-center">admin</td>
+                    <td class="text-center">13823822233</td>
+                    <td class="text-center">11111@qq.com</td>
+                    <td class="text-center">12605</td>
+                    <td class="text-center">2017-05-30 18:16:57</td>
+                    <td class="text-center">
+                        <span style="color:#090">使用中</span>
+                    </td>
+                    <td class="text-center nowrap">
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/user/edit.html?id=10000" href="javascript:void(0)">编辑</a>
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/user/auth.html?id=10000" href="javascript:void(0)">授权</a>
+                        <span class="text-explode">|</span>
+                        <a data-modal="/admin/user/pass.html?id=10000" href="javascript:void(0)">密码</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="10000" data-field="status" data-value="0" data-action="/admin/user/forbid.html" href="javascript:void(0)">禁用</a>
+                        <span class="text-explode">|</span>
+                        <a data-update="10000" data-field="delete" data-action="/admin/user/del.html" href="javascript:void(0)">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p></p></form>
+
+    </div>
+
+</div>
